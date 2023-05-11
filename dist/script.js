@@ -586,7 +586,10 @@ submit_btn.addEventListener("click", (e)=>{
         e.preventDefault();
         phn_err.style.display = "flex";
         phn_err.textContent = "Please enter a valid phone number";
-    } else return true;
+    } else {
+        document.cookie = "formSubmitted=true";
+        return true;
+    }
 });
 ///////////////SHOWING POP UP///////////////
 let options = {
@@ -640,6 +643,48 @@ submit_btn2.addEventListener("click", (e)=>{
         phn_err2.textContent = "Please enter a valid phone number";
     } else return true;
 });
+////////////////POPUP FORM VALIDATIONS ENDS/////////////////////
+////////////////SLIDER CODE/////////////////////
+function slider2() {
+    let splides = $(".slider2");
+    for(let i = 0, splideLength = splides.length; i < splideLength; i++)new Splide(splides[i], {
+        // Desktop on down
+        perPage: 2,
+        perMove: 1,
+        focus: 0,
+        type: "loop",
+        gap: "2em",
+        arrows: false,
+        pagination: "slider",
+        speed: 600,
+        dragAngleThreshold: 30,
+        autoWidth: false,
+        rewind: true,
+        rewindSpeed: 400,
+        waitForTransition: false,
+        updateOnMove: true,
+        trimSpace: false,
+        autoplay: true,
+        breakpoints: {
+            991: {
+                // Tablet
+                perPage: 1,
+                gap: "4vw"
+            },
+            767: {
+                // Mobile Landscape
+                perPage: 1,
+                gap: "4vw"
+            },
+            479: {
+                // Mobile Portrait
+                perPage: 1,
+                gap: "4vw"
+            }
+        }
+    }).mount();
+}
+slider2();
 
 },{}]},["dpgAG","6rimH"], "6rimH", "parcelRequire6c68")
 
